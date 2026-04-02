@@ -1,0 +1,9 @@
+[phases.setup]
+nixpkgsArchive = "23.05"
+pkgs = ["php82", "php82Packages.composer", "openssh", "git"]
+
+[phases.install]
+cmds = [
+    "git config --global url.\"https://github.com/\".insteadOf \"git@github.com:\"",
+    "composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist"
+]
